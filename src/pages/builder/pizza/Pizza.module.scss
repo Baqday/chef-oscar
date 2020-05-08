@@ -1,0 +1,731 @@
+@import '../../../assets/style/mixin';
+
+.MainContainer {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+
+    .IngredientsMenuR {
+        position: relative;
+        width: 120px;
+        min-height: 100vh;
+        background-color: transparent;
+        @include box-shadow(3);
+        z-index: 1;
+
+
+        .IngredientsMenu {
+            position: fixed;
+            width: 120px;
+            height: 100%;
+            z-index: 1;
+
+            .BtnPizza {
+                position: relative;
+                width: 120px;
+                height: 10vh;
+                display: block;
+                border-bottom: 1px solid #DDD;
+                cursor: pointer;
+                transition: .2s ease-in-out;
+
+                &:hover {
+                    background-color: rgb(253, 239, 239);
+                    transition: .2s ease-in-out;
+                }
+
+                .BtnImg {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+
+                    margin: auto;
+                    width: 40px;
+                    height: 5vh;
+
+                    .svg {
+                        fill: #7513F5;
+
+                    }
+                }
+
+                .BtnText {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    height: 5vh;
+                    text-align: center;
+                    line-height: 6vh;
+                    color: rgb(82, 81, 81);
+                }
+
+                .AltMenu {
+                    position: absolute;
+                    width: 200px;
+                    min-height: 10vh;
+                    right: -215px;
+                    border: 1px solid #7513F5;
+                    background-color: #FFF;
+                    @include box-shadow(3);
+                    border-radius: 10px;
+                    top: 0;
+                    z-index: 1;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    &:after {
+                        border-top: solid transparent 15px;
+                        border-bottom: solid transparent 15px;
+                        border-right: solid #7513F5 15px;
+                        top: 2.5vh;
+                        content: " ";
+                        height: 0;
+                        left: -15px;
+                        position: absolute;
+                        width: 0;
+
+                    }
+
+                    .AltMenuList {
+                        position: relative;
+                        width: 100%;
+                        text-align: left;
+                        cursor: pointer;
+                        min-height:5vh;
+                        padding-bottom:5px;
+
+                        &:not(:last-child) {
+                            border-bottom: 1px solid #DDD;
+                        }
+
+                        &:last-child {
+                            border-bottom-left-radius: 8px;
+                            border-bottom-right-radius: 8px;
+
+
+                        }
+
+                        &:first-child {
+                            border-top-left-radius: 8px;
+                            border-top-right-radius: 8px;
+
+                        }
+
+                        span {
+                            display: block;
+                            width: 100%;
+                            height: clac(10vh / 3);
+                            font-size: 13px;
+                            color: rgb(82, 81, 81);
+                            text-indent: 10px;
+                            text-transform: capitalize;
+
+
+
+                        }
+                    }
+
+                    .AltMenuListActive {
+                        background-color: #7513F5;
+
+                        span {
+                            color: #eee;
+                        }
+                    }
+
+                    .IngridientParent{
+                        position: relative;
+                        width:100%;
+                        min-height:10vh;
+                        border-radius: 10px;
+                        display: flex;
+                        justify-content: center;
+                        flex-wrap: wrap;
+
+                        .Ingredient{
+                            width:98px;
+                            height:70px !important;
+                            position: relative;
+                            background-color: #FFF;
+                            border:1px solid #DDD;
+                            
+                            &:nth-child(1){
+                                border-top-left-radius:10px;
+                            }
+                            &:nth-child(2){
+                                border-top-right-radius:10px;
+                            }
+                            .IngredientIcon{
+                                width:100%;
+                                height:50px;
+                                position: relative;
+                                text-align: center;
+                                svg{
+                                    height:50px !important;
+                                }
+                            }
+                            .IngredientText{
+                                width:100%;
+                                height:20px;
+                                position: relative;
+                                text-align: center;
+                                
+                            }
+                        }
+                        .IngredientActive{
+                            background-color: #7513F5;
+                            color: #FFF;
+                        }
+                    }
+
+                }
+            }
+
+            .BtnActive {
+                background-color: #7513F5 !important;
+
+                .BtnText {
+
+                    color: #FFF !important;
+                }
+            }
+
+        }
+    }
+
+
+
+
+
+    .PizzaSection {
+        position: relative;
+        width: calc(100% - 120px);
+        min-height: 100vh;
+        z-index: 0;
+        background: #c21500;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ffc500, #c21500);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ffc500, #c21500); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        .OrderBtn{
+            position: absolute;
+            width:200px;
+            height:100px;
+            bottom: 0;
+            left:0;
+            right:0;
+            margin: auto;
+            button{
+                width: 120px;
+                height:40px;
+                outline:none;
+                border:2px solid #FFF;
+                background: transparent;
+                border-radius:40px;
+                color: #FFF;
+                font-size: 18px;
+                cursor: pointer;
+                transition: .2s linear;
+
+                &:hover{
+                    background-color: #7513F5;
+                    transition: .2s linear;
+                }
+            }
+        }
+
+
+        .PizzaDoughParent {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            
+            .ActiveOrder{
+                transform: translate(100%,0);
+                transition: .4s ease-in;
+            }
+            .PizzaDough {
+
+                position: fixed;
+                width: 400px;
+                height: 400px;
+                border-radius: 50%;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                // background-color: red;
+                
+
+                animation: rotate 20s ease-in alternate infinite;
+                
+                .PizzaCircle{
+                    position: absolute;
+                    width:400px;
+                    height:400px;
+                    border-radius: 50%;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    // background-color: red;
+                     .Pineapple1{
+                            position: absolute;
+                            width:70px;
+                            height:70px;
+                            border-radius:50%;
+                            top:25%;
+                            left:35%;
+                            z-index: 6;
+                            visibility: hidden;
+                            img{
+                                width: 100%;
+                            }
+
+                        }
+                        .Pineapple2{
+                            position: absolute;
+                            width:65px;
+                            height:65px;
+                            border-radius:50%;
+                            top:35%;
+                            left:65%;
+                            z-index: 6;
+                            visibility: hidden;
+
+                            img{
+                                width: 100%;
+                            }
+                            transform: rotate(125deg);
+
+
+                        }
+                        .Pineapple3{
+                            position: absolute;
+                            width:95px;
+                            height:95px;
+                            border-radius:50%;
+                            top:55%;
+                            left:35%;
+                            z-index: 6;
+                            transform: rotate(65deg);
+                            visibility: hidden;
+
+                            img{
+                                width: 100%;
+                            }
+
+                        }
+                        .Pineapple4{
+                            position: absolute;
+                            width:95px;
+                            height:95px;
+                            border-radius:50%;
+                            top:15%;
+                            left:15%;
+                            z-index: 6;
+                            transform: rotate(25deg);
+                            visibility: hidden;
+
+                            img{
+                                width: 100%;
+                            }
+
+                        }
+                        .pineActive{
+                            visibility: visible !important;
+                            animation: pizza-fall 1s ease-in;
+
+                        }
+                    .CircleInn{
+                        position: absolute;
+                        width:340px;
+                        height:340px;
+                        border-radius: 50%;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        overflow:hidden;
+
+                       
+                    .Area{
+                        top:0;
+                        bottom:0;
+                        margin:auto;
+
+                        img{
+                            width:35px;
+                        }
+                        
+                            visibility: hidden;
+
+                        
+
+                    }
+                    .Area1{
+                        position:absolute;
+                        width:35px;
+                        height:240px;
+                        left:0;
+                        top:35px;
+                        
+
+                        .PizzaIngr{
+                            width:35px;
+                            height:35px;
+                            border-radius:50%;
+                            // background-color:#FFF;
+                            position:relative;
+                            margin:5px auto;
+
+                           
+                        }
+
+                    }
+
+                    .Area2{
+                        position:absolute;
+                        width:35px;
+                        height:310px;
+                        left:35px;
+                        top:25px;
+
+                        .PizzaIngr{
+                            width:35px;
+                            height:35px;
+                            border-radius:50%;
+                            // background-color:#FFF;
+                            position:relative;
+                            margin:5px auto;
+
+                        }
+                    }
+                    .Area3{
+                        position:absolute;
+                        width:35px;
+                        height:340px;
+                        left:70px;
+                        top:20px;
+                        .PizzaIngr{
+                            width:35px;
+                            height:35px;
+                            border-radius:50%;
+                            // background-color:#FFF;
+                            position:relative;
+                            margin:5px auto;
+                          
+                        }
+                    }
+                    .Area4{
+                        position:absolute;
+                        width:35px;
+                        height:340px;
+                        left:105px;
+                        top:-25px;
+                        .PizzaIngr{
+                            width:35px;
+                            height:35px;
+                            border-radius:50%;
+                            // background-color:#FFF;
+                            position:relative;
+                            margin:5px auto;
+                           
+                        }
+                    }
+                    .Area5{
+                        position:absolute;
+                        width:35px;
+                        height:340px;
+                        left:140px;
+                        top:-15px;
+                        .PizzaIngr{
+                            width:35px;
+                            height:35px;
+                            border-radius:50%;
+                            // background-color:#FFF;
+                            position:relative;
+                            margin:5px auto;
+                          
+                        }
+                    }
+                    .Area6{
+                        position:absolute;
+                        width:35px;
+                        height:300px;
+                        left:175px;
+                        top:-55px;
+                        .PizzaIngr{
+                            width:35px;
+                            height:35px;
+                            border-radius:50%;
+                            // background-color:#FFF;
+                            position:relative;
+                            margin:5px auto;
+                           
+                        }
+                    }
+                    .Area7{
+                        position:absolute;
+                        width:35px;
+                        height:310px;
+                        left:210px;
+                        top:-45px;
+                         
+                        .PizzaIngr{
+                            width:35px;
+                            height:35px;
+                            border-radius:50%;
+                            // background-color:#FFF;
+                            position:relative;
+                            margin:5px auto;
+                           
+                        }
+                        
+                    }
+                    .Area8{
+                        position:absolute;
+                        width:35px;
+                        height:230px;
+                        left:245px;
+                        top:-85px;
+                        
+                        .PizzaIngr{
+                            width:35px;
+                            height:35px;
+                            border-radius:50%;
+                            // background-color:#FFF;
+                            position:relative;
+                            margin:5px auto;
+                           
+                        }
+
+                    }
+                    .Area9{
+                        position:absolute;
+                        width:35px;
+                        height:230px;
+                        left:280px;
+                        top:-15px;
+                        
+                        .PizzaIngr{
+                            width:35px;
+                            height:35px;
+                            border-radius:50%;
+                            // background-color:#FFF;
+                            position:relative;
+                            margin:5px auto;
+                           
+                        }
+
+                    }
+                    .Area10{
+                        position:absolute;
+                        width:35px;
+                        height:230px;
+                        left:315px;
+                        top:50px;
+                        
+                        .PizzaIngr{
+                            width:35px;
+                            height:35px;
+                            border-radius:50%;
+                            // background-color:#FFF;
+                            position:relative;
+                            margin:5px auto;
+                            
+                            
+                        }
+
+                    }
+
+                    .Area:nth-child(even):not(:last-child){
+                        .PizzaIngr:nth-child(2),.PizzaIngr:nth-last-child(2){
+                            width:25px;
+                            height:25px;
+                            img{
+                                width:25px;
+                            }
+                        }
+
+                    }
+                    .Area:nth-child(2){
+                        .PizzaIngr:not(:first-child):not(:last-child):nth-child(even){
+                            width:25px;
+                            height:25px;
+                            img{
+                                width:25px;
+                            }
+                        }
+
+                    }
+                    .Area:nth-child(2){
+                        .PizzaIngr:not(:first-child):not(:last-child):nth-child(odd){
+                            width:25px;
+                            height:25px;
+                            img{
+                                width:25px;
+                            }
+                        }
+
+                    }
+                    .Area:nth-last-child(2){
+                        .PizzaIngr:not(:first-child):not(:last-child):nth-child(odd){
+                            width:25px;
+                            height:25px;
+                            img{
+                                width:25px;
+                            }
+                        }
+
+                    }
+                    .Area:nth-last-child(2){
+                        .PizzaIngr:not(:first-child):not(:last-child):nth-child(even){
+                            width:50px;
+                            height:50px;
+                            img{
+                                width:50px;
+                            }
+                        }
+
+                    }
+
+
+                   
+                    .Area:nth-child(3),.Area:nth-last-child(4){
+                        .PizzaIngr:not(:first-child):not(:last-child):nth-child(even){
+                            width:50px;
+                            height:50px;
+                            z-index: 5;
+                            img{
+                                width: 50px;
+                            }
+                        }
+
+                    }
+                   
+                    .Area:nth-child(4),.Area:nth-last-child(5){
+                        .PizzaIngr:not(:first-child):not(:last-child):not(:nth-child(2)):not(:nth-last-child(2)):nth-child(even){
+                            background-color: transparent !important;
+                            width:50px;
+                            height:50px;
+                            img{
+                                width:50px;
+                            }
+                        }
+
+                    }
+                   
+                   
+                    .Area:nth-last-child(6){
+                        .PizzaIngr:not(:first-child):not(:last-child):nth-child(odd){
+                            width:65px;
+                            height:65px;
+                            z-index: 5;
+                            img{
+                                width:65px;
+                            }
+                        }
+
+                    }
+                  
+                    .Area:nth-last-child(3){
+                        .PizzaIngr:not(:first-child):not(:last-child):not(:nth-child(2)):not(:nth-last-child(2)):nth-child(even){
+                            background-color: transparent !important;
+                            widows: 65px;
+                            height:65px;
+                            z-index: 5;
+                            img{
+                                width:65px;
+                            }
+                        }
+
+                    }
+
+                    .ActiveIng{
+                        animation: pizza-fall 1s ease-in;
+                        visibility: visible !important;
+
+                    }
+                    
+                    
+                    @keyframes pizza-fall {
+                        0% {
+                          transform: translateY(-300%) scale(3);
+                        }
+                        50% {
+                          transform: skewX(2deg) skewY(2deg);
+                        }
+                        60% {
+                          transform: skewX(1.8deg) skewY(-1.8deg) translateY(-4%);
+                        }
+                        70% {
+                          transform: skewX(-1deg) skewY(0.7deg);
+                        }
+                        80% {
+                          transform: skewX(-0.4deg) skewY(-0.3deg) translateY(-1%);
+                        }
+                        90% {
+                          transform: skewX(0.2deg) skewY(0.2deg);
+                        }
+                        100% {
+                          transform: none;
+                        }
+                      }
+                      
+                    
+                }
+
+                    .Line{
+                        position: absolute;
+                        width:1px;
+                        height:400px;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        background-color: #FFF;
+                        z-index: 7;
+
+                        
+                    }
+                    
+
+
+                }
+            }
+
+            // @keyframes rotate {
+            //     from {
+            //         transform: rotate(0deg);
+            //     }
+
+            //     to {
+            //         transform: rotate(360deg);
+
+            //     }
+            // }
+
+
+            .AnimePizza {
+                animation: hop .5s ease-in-out alternate-reverse;
+
+            }
+
+            @keyframes hop {
+                from {
+                    transform: scale(1);
+                }
+
+                to {
+                    transform: scale(1.1);
+
+                }
+            }
+        }
+    }
+}

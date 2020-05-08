@@ -1,0 +1,341 @@
+@import '../../../../assets/style/mixin';
+
+.GridTable{
+
+    width:350px;
+    height:270px;
+    position: relative;
+    @include box-shadow(3);
+    margin:15px;
+    cursor: pointer;
+    .Photo{
+        width:100%;
+        height:200px;
+        position: relative;
+        margin:0 auto;
+        overflow: hidden;
+        
+
+        img{
+            width:inherit;
+            height:inherit;
+            object-fit: cover;
+            transition: all .3s ease-in-out;
+
+        }
+    }
+    .Info_a{
+        width:100%;
+        min-height:50px;
+        position: relative;
+        margin:0 auto;
+        text-overflow: ellipsis;
+
+        span:nth-child(1){
+            display: block;
+            font-size:18px;
+            color: #3c3d40;
+            font-family: sans-serif;
+            padding-left:3px;
+            padding-top:3px;
+            font-weight: bold;
+
+
+
+        }
+        span:nth-child(2){
+            display: block;
+            font-size:12px;
+            color:#868789;
+            margin-top:0px;
+            font-family: sans-serif;
+            padding-left:3px;
+            padding-top:3px;
+
+
+        }
+        span:nth-child(3){
+            display: block;
+            
+            margin-top:0px;
+            padding-left:3px;
+            padding-top:3px;
+            font-size: 12px;
+            color: #868789;
+
+
+        }
+
+        .Date{
+            position: absolute;
+            width:50px;
+            height:50px;
+            text-align: center;
+           
+            right:10px;
+            top:0;
+            bottom:0;
+            margin:auto;
+          
+            font-family:sans-serif;
+            font-weight: bold;
+            .Duration{
+                position: relative;
+                width:100%;
+                height:25px;
+                color:#3c3d40;
+                font-size:15px;
+                line-height:25px;
+
+            }
+            .Distance{
+                position: relative;
+                width:100%;
+                height:25px;
+                color:#868789;
+                font-size:11px;
+                line-height:25px;
+                border-top:2px solid orange;
+            }
+            img{
+                max-width:50px;
+                width:80%;
+                height:50px;
+                border-radius:50px;
+               
+
+            }
+            .TruckLayer{
+                position: absolute;
+                width:50px;
+                height:50px;
+                left:0;
+                top:0;
+                border-radius:50%;
+                background-color: rgba(182, 161, 161, 0.726);
+                &::before{
+                    content: '';
+                    position: absolute;
+                    width:5px;
+                    height:50px;
+                    background-color: red;
+                    left:0;
+                    right:0;
+                    top:0;
+                    bottom:0;
+                    margin: auto;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+        
+    }
+    .Info_b{
+        width:100%;
+        height:50px;
+        position: relative;
+        margin:0 auto;
+        border-top:1px dashed #e4e4e4;
+        font-size: 12px;
+        color:#868789;
+        font-family: sans-serif !important;
+
+        
+    }
+
+    &:hover .Photo img{
+        transform: scale(1.1);
+        transition: all .3s ease-in-out;
+    }
+}
+
+
+.GridList{
+
+    max-width:850px;
+    width:100%;
+    height:120px;
+    position: relative;
+    @include box-shadow(3);
+    margin:15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    .Photo{
+        width:35%;
+        height:120px;
+        position: relative;
+        margin:0 auto;
+        overflow: hidden;
+        
+
+        img{
+            width:100%;
+            height:inherit;
+            object-fit: cover;
+            transition: all .3s ease-in-out;
+
+        }
+    }
+    .Info_a{
+        width:65%;
+        min-height:50px;
+        position: relative;
+        margin:0 auto;
+        text-overflow: ellipsis;
+        span{
+            position: absolute;
+        }
+
+        span:nth-child(1){
+            display: block;
+            height:30px;
+            line-height:30px;
+            font-size:18px;
+            color: #3c3d40;
+            font-family: sans-serif;
+            padding-left:3px;
+            padding-top:3px;
+            font-weight: bold;
+            width:98%;
+            top:0;
+
+
+
+
+        }
+
+        span:nth-child(2){
+            display: block;
+            font-size:12px;
+            color: #3c3d40;
+            font-family: sans-serif;
+            padding-left:3px;
+            padding-top:3px;
+            font-weight: bold;
+            width:98%;
+            height:30px;
+            top:30px;
+            line-height:30px;
+
+
+
+
+        }
+        span:nth-child(3){
+            font-size:12px;
+            color:#868789;
+            margin-top:0px;
+            font-family: sans-serif;
+            padding-left:3px;
+            padding-top:3px;
+width:98%;
+height:60px;
+top:60px;
+
+
+
+        }
+        span:nth-child(4){
+            display: block;
+            
+            padding-left:3px;
+            padding-top:3px;
+            font-size: 12px;
+            color: #868789;
+
+            width:98%;
+            bottom: 0;
+            left:0;
+        }
+
+        .Date{
+            position: absolute;
+            width:50px;
+            height:50px;
+            text-align: center;
+           
+            right:10px;
+            top:0;
+            bottom:0;
+            margin:auto;
+          
+            font-family:sans-serif;
+            font-weight: bold;
+            .Duration{
+                position: relative;
+                width:100%;
+                height:25px;
+                color:#3c3d40;
+                font-size:15px;
+                line-height:25px;
+
+            }
+            .Distance{
+                position: relative;
+                width:100%;
+                height:25px;
+                color:#868789;
+                font-size:11px;
+                line-height:25px;
+                border-top:2px solid orange;
+            }
+            img{
+                max-width:50px;
+                width:80%;
+                height:50px;
+                border-radius:50px;
+               
+
+            }
+            .TruckLayer{
+                position: absolute;
+                width:50px;
+                height:50px;
+                left:0;
+                top:0;
+                border-radius:50%;
+                background-color: rgba(182, 161, 161, 0.726);
+                &::before{
+                    content: '';
+                    position: absolute;
+                    width:5px;
+                    height:50px;
+                    background-color: red;
+                    left:0;
+                    right:0;
+                    top:0;
+                    bottom:0;
+                    margin: auto;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+        
+    }
+    .Info_b{
+        width:100%;
+        height:50px;
+        position: relative;
+        margin:0 auto;
+        border-top:1px dashed #e4e4e4;
+        font-size: 12px;
+        color:#868789;
+        font-family: sans-serif !important;
+
+        
+    }
+
+    &:hover .Photo img{
+        transform: scale(1.1);
+        transition: all .3s ease-in-out;
+    }
+
+    @media only screen and (max-width:900px) {
+        &{
+            width:90%;
+            margin:15px auto;
+        }
+    }
+}
+

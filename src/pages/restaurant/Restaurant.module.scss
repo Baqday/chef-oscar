@@ -1,0 +1,807 @@
+@import '../../assets/style/mixin';
+@include font-face('Lobster','../../assets/fonts/Lobster/Lobster-Regular.ttf');
+
+
+
+.Cover{
+    width:100%;
+    height:55vh;
+    position: relative;
+    margin:0 auto;
+    background-color:rgba(0, 0, 0, 0.562);
+
+    .ResName{
+        position: absolute;
+        width:100%;
+        height:10vh;
+        left:0;
+        right:0;
+        top:15vh;
+        margin:auto;
+        text-align: center;
+        line-height:10vh;
+        font-size:65px;
+        font-weight:bold;
+        color: chartreuse;
+        
+    }
+    .ResAddress{
+        position: absolute;
+        width:100%;
+        height:6vh;
+        left:0;
+        right:0;
+        top:25vh;
+        margin:auto;
+        text-align: center;
+        line-height:6vh;
+        font-size:18px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight:bold;
+        color: #FFF;
+    }
+    .FoodSearch{
+        position: absolute;
+        top:2vh;
+        left:0;
+        right:0;
+        margin: auto;
+        width:20vw;
+        height:5vh;
+        // border:1px solid #FFF;
+        input{
+            outline: none;
+        border:1px solid #FFF;
+        width:100%;
+            height:5vh;
+            font-size:18px;
+            background: transparent;
+            color: #FFF;
+
+        }
+
+        .FoodSearchResult{
+            position: absolute;
+            width:100%;
+            min-height:5vh;
+            // border:1px solid #FFF;
+            background-color: #FFF;
+
+            left:0;
+            right:0;
+            top:7.4vh;
+            margin: auto;
+            z-index:15;
+            
+            &:after{
+                border-left: solid transparent 10px;
+                border-right: solid transparent 10px;
+                border-bottom: solid #ffffe0 10px;
+                top:-10px;
+                content: " ";
+                height: 0;
+                left: 50%;
+                margin-left: -13px;
+                position: absolute;
+                width: 0;
+            }
+
+            .SearchResultItem{
+                position: relative;
+                width:100%;
+                height:7vh;
+                margin:0 auto;
+                background-color: #FFF;
+                cursor: pointer;
+                &:hover{
+                    background-color:#EEE;
+                }
+                
+                &:not(:last-child){
+                    border-bottom:1px solid #DDD;
+                }
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .SRIInfo{
+                    width:80%;
+                    height:7vh;
+                    text-align: left;
+                line-height:7vh;
+                font-size:15px;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                color: #000;
+                text-transform: capitalize;
+                
+
+                }
+                .SRIPhoto{
+                    width:20%;
+                    height:7vh;
+                    img{
+                        width:100%;
+                        height:7vh;
+                        object-fit:  cover;
+                    }
+
+                }
+            }
+        }
+    }
+    .CategoryList{
+        position: absolute;
+        width:100%;
+        height:10vh;
+        left:0;
+        right:0;
+        bottom:12vh;
+        margin:auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .CategoryListItem{
+            position: relative;
+            width:10vw;
+            height:7vh;
+            text-align: center;
+            line-height:7vh;
+            margin:5px;
+            border:1px solid #FFF;
+            text-transform: capitalize;
+            font-size:1.4vmax;
+            color: #FFF;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    }
+
+    .CoverImg{
+        width:100%;
+        height:65vh;
+        object-fit: cover;
+    }
+    .CoverLayer{
+        position: absolute;
+        width:100%;
+        height:100%;
+        left:0;
+        right:0;
+        bottom:0;
+        top:0;
+        margin:auto;
+        background-color:rgba(0, 0, 0, 0.61) ;
+    }
+}
+
+.MainContent{
+
+    position: relative;
+    width:95%;
+    min-height:50vh;
+    display: flex;
+    justify-content:space-around;
+    margin:-50px auto;
+
+    .HiddenCart{
+        
+        position: relative;
+        width:25%;
+        min-height:50vh;
+        
+        
+    }
+    .Cart{
+        background-color: #FFF;
+        @include box-shadow(3);
+        .CartHeader{
+            position: relative;
+            width:100%;
+            height:10vh;
+            background-color:#FFF;
+            @include box-shadow(3);
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            .CartHeaderTab{
+                position: relative;
+                width:calc(100% / 3);
+                height:10vh;
+                background-color: #FFF;
+                &:not(:last-child){
+                    // border-right:1px solid #333;
+
+                }
+
+                .FoodCount{
+                    width:100%;
+                    height:10vh;
+                    position: absolute;
+                    left:0;
+                    right:0;
+                    bottom:0;
+                    top:4vh;
+                    margin:auto;
+                    line-height:40px;
+                    color:#FFF;
+        
+                }
+
+                cursor: pointer;
+                text-align: center;
+                svg{
+                    width: 100%;
+                    height:7vh;
+                    margin-top:5px;
+                    fill:#7513F5;
+                    
+                }
+            }
+            .ActiveTab{
+                background-color:#7513F5 !important;
+                .FoodCount{
+                    color:#7513F5 !important;
+                }
+                svg{
+                    fill:#FFF !important;
+                }
+            }
+        }
+
+        .CartContent{
+            width:100%;
+            height:80vh;
+            position: relative;
+            overflow-y: auto;
+
+                    &::-webkit-scrollbar-track
+                    {
+                    box-shadow:inset 0 0 6px rgba(0,0,0,0.3);
+                    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+                    background-color: #F5F5F5;
+                    }
+
+                    &::-webkit-scrollbar
+                    {
+                    width: 3px;
+                    background-color: #F5F5F5;
+                    }
+
+                    &::-webkit-scrollbar-thumb
+                    {
+                    background-color: #7513F5;
+                    }
+
+            
+
+        
+
+            .EmptyCart{
+                position: relative;
+                width:100%;
+                height:20vh;
+                margin:5vh auto;
+                line-height:20vh;
+                text-align: center;
+                color:rgb(151, 142, 142);
+            }
+            .CartItem{
+                position: relative;
+                width:90%;
+                height:10vh;
+                margin:3vh auto;
+                // border:1px solid #7513F5;
+                @include box-shadow(2);
+                border-radius:5px;
+                display: flex;
+                justify-content: center;
+
+                .CartItemPhoto{
+                    position: relative;
+                    width:20%;
+                    height:10vh;
+                    border-top-right-radius:5px;
+                    border-bottom-right-radius:5px;
+                    overflow: hidden;
+
+                    img{
+                        width:100%;
+                        height:10vh;
+                        object-fit: cover;
+                        border-top-right-radius:5px;
+                    border-bottom-right-radius:5px;
+                    }
+
+                    .DeleteCartItem{
+                        position: absolute;
+                        width:100%;
+                        height:10vh;
+                        right:-100%;
+                        background-color: rgba(218, 58, 58, 0.534);
+                        top:0;
+                        text-align: center;
+                        line-height:10vh;
+                        font-size:25px !important;
+                        color: #FFF;
+                        cursor: pointer;
+                        transition: .3s ease-in-out;
+                        border-top-right-radius:5px;
+                    border-bottom-right-radius:5px;
+
+                                
+                    }
+                    
+                    
+
+                }
+                &:hover .DeleteCartItem{
+                    right:0 !important;
+                    transition: .3s ease-in-out;
+                 } 
+                .CartItemInfo{
+                    position: relative;
+                    width:80%;
+                    height:10vh;
+                    border-top-left-radius:5px;
+                    border-bottom-left-radius:5px;
+                    .CartItemInfoTitle{
+                        position: relative;
+                        width:100%;
+                        height:4vh;
+                        border-top-left-radius:5px;
+                        // border-bottom:1px dashed #DDD;
+                        line-height:4vh;
+                        text-indent:1vh;
+                        color:#333;
+
+                    }
+                    .CartItemInfoPrice{
+                        position: relative;
+                        width:100%;
+                        height:6vh;
+                        border-bottom-left-radius:5px;
+                        
+                        table{
+                            // border-top:1px dashed #DDD;
+                            td{
+                                text-align: center;
+                            }
+                            .TrH{
+                                font-size:14px;
+                                font-family: sans-serif;
+                                // font-weight: bolder;
+                                color:rgb(151, 142, 142);
+
+                                td{
+                                    border-top:1px solid #DDD;
+                                    border-bottom:1px solid #DDD;
+
+
+                                    &:not(:last-child){
+                                     border-right:1px solid #DDD;
+                                    } 
+                                 }
+                            }
+                            .TrB{
+                                // font-size:14px;
+                                font-family: sans-serif;
+                                color:#333;
+
+                                td{
+                                    padding-top:2px;
+                                   &:not(:last-child){
+                                    border-right:1px solid #DDD;
+
+
+                                   }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .CardFixedFooter{
+                position: fixed;
+                width:23.7%;
+                height:10vh;
+                right:3.7%;
+                bottom:0;
+               
+                background:transparent;
+                text-align: center;
+                // line-height:10vh;
+                button.OrderBtn{
+                    background-color:#7513F5;
+                    height:6vh;
+                    color:#FFF;
+                    font-size:25px;
+                    outline:none;
+                    border:0;
+                    width:100%;
+                    cursor: pointer;
+
+                }
+
+                .TotalPrice{
+                    position: relative;
+                    width:100%;
+                    height:4vh;
+                    border-top:1px dashed #DDD;
+                    text-align: center;
+                    line-height:4vh;
+                }
+            }
+        }
+
+    }
+    
+    .RCart{
+        position: relative;
+        width:100%;
+        height:100vh;
+    }
+    .FixedCart{
+        position: fixed;
+        width:23.7%;
+        height:100vh;
+        right:3.7%;
+        top:0;
+    }
+}
+
+
+
+.MenuSection{
+    position: relative !important;
+    width:70%;
+    min-height:50vh;
+    background-color:#FFF;
+    // margin:-50px auto;
+    @include box-shadow(3);
+    overflow: hidden;
+    margin-bottom:20vh;
+    .MenuHeader{
+        background-color: #FFF;
+        @include box-shadow(3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index:10;
+
+        .MenuCategoryItem{
+            position: relative;
+            height:inherit;
+            background-color: #FFF;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index:10;
+            overflow: hidden;
+            flex-wrap: wrap;
+
+            svg{
+                // max-width:100%;
+                height:8vh;
+                // background-color: blue;
+                position: relative;
+                width:100% !important;
+            }
+
+            .CategoryName{
+                
+            }
+            
+        }
+        .ActiveCategory{
+            background-color:orange !important;
+            svg{
+                fill:#FFF;
+                animation:scaleSvg .3s ease-in-out;
+            }
+            .CategoryName{
+                color: #FFF;
+            }
+            @keyframes scaleSvg {
+                    from{
+                        transform: scale(1.2);
+                    }
+                    to{
+                        transform: scale(1);
+
+                    }
+            }
+        }
+
+    }
+
+    .MenuHeaderFixed{
+        position: fixed;
+        width:66.5%;
+        height:13vh;
+        left:3.7%;
+        top:0;
+        margin: auto;
+        
+
+    }
+
+    .MenuHeaderRelative{
+        position: relative;
+        margin:0 auto;
+        width:100%;
+        height:13vh;
+
+
+    }
+  
+}
+.MenuSectionContent{
+    position: relative;
+    width:100%;
+    min-height:50vh;
+    margin:0 auto;
+    background-color:#FFF;
+    z-index:9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom:10vh;
+
+    
+    .MenuItem{
+        position: relative;
+        max-width:450px;
+        width:100%;
+        height:330px;
+        @include box-shadow(3);
+        background-color: #FFF;
+        margin:20px;
+        border-radius:5px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+        .CoverMenuItem{
+            position: relative;
+            width:100%;
+            min-height:200px;
+            // background-color: rgba(0, 0, 0, 0.562);
+            border-top-left-radius:5px;
+                border-top-right-radius:5px;
+
+            img{
+                width:100%;
+                height:200px;
+                object-fit: cover;
+                border-top-left-radius:5px;
+                border-top-right-radius:5px;
+                object-position: center;
+
+
+
+            }
+            .Xcount{
+                position: absolute;
+                top:0;
+                bottom:0;
+                right:10px;
+                margin: auto;
+                width:70px;
+                height:50px;
+                transition:.4s ease-in-out;
+                font-family: sans-serif;
+
+
+                
+                .XcountX{
+
+                    width:30px;
+                    height:30px;
+                    text-align: center;
+                    line-height:30px;
+                    font-size:23px;
+                    -webkit-text-stroke:#333;
+                    -webkit-text-fill-color: rgb(255, 238, 0);
+                    -webkit-text-stroke-width:1px;
+                    
+                }
+                .XcountN{
+                    width:50px;
+                    height:50px;
+                    text-align: center;
+                    line-height:50px;
+                    font-size:55px;
+                    font-family: Lobster;
+                    -webkit-text-stroke:#333;
+                    -webkit-text-fill-color: rgb(255, 238, 0);
+                    -webkit-text-stroke-width:2px;
+                    
+                }
+            }
+            .XcountHide{
+                display: none;
+                transition:.4s ease-in-out;
+
+            }
+            .XcountShow{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                transition:.4s ease-in-out;
+            }
+        }
+        .InfoMenuItem{
+            position: relative;
+            width:100%;
+            min-height:100px;
+            // background-color: rgba(0, 0, 0, 0.562);
+            border-bottom-left-radius:5px;
+            border-bottom-right-radius:5px;
+            font-family: sans-serif;
+
+
+            .MenuTitle{
+                position: relative;
+                width:100%;
+                height:30px;
+                // background-color: red;
+                margin: auto;
+                line-height:30px;
+                font-size:25px;
+                // font-weight: bold;
+                text-indent:5px;
+                color: #7513F5;
+                font-weight: bold;
+
+            }
+            .MenuDescription{
+                position: relative;
+                width:98%;
+                min-height:30px;
+                // background-color: yellow;
+                float: left;
+                padding-left:5px;
+                color:rgb(151, 142, 142);
+
+            }
+            .MenuPrice{
+                color: #7513F5;
+                float: left;
+                position: relative;
+                width:98%;
+                height:30px;
+                // background-color: darkblue;
+                margin: auto;
+                padding-left:5px;
+                line-height:30px;
+                font-weight: bold;
+            }
+
+            .SelectItem{
+                position: absolute;
+                height:50px;
+                
+                background-color:#FFF;
+                @include box-shadow(3);
+                bottom:-50px;
+                left:0;
+                right:0;
+                margin: auto;
+                
+                font-size: 25px;
+                color: #7513F5;
+                transition:all .3s ease-in-out;
+
+
+            }
+            .DeactiveSelectItem{
+                width:50px;
+                border-radius: 50%;
+                transition:all .3s ease-in-out;
+                text-align: center;
+                line-height:50px;
+
+                .Inc{
+                    display: none;
+                }
+                .Dec{
+                    display: none;
+                }
+                .Counter{
+                    display: none;
+                }
+                .ItemIcon{
+                    display: block;
+                    cursor: pointer;
+
+                }
+            }
+            .ActiveSelectItem{
+                width:170px;
+                border-radius:50px;
+                transition:all .3s ease-in-out;
+                .ItemIcon{
+                    display: none !important;
+                }
+
+                .Inc{
+                    width:50px;
+                    height:50px;
+                    position: absolute;
+                    right:0;
+                    top:0;
+                    bottom:0;
+                    margin: auto;
+                    text-align: center;
+                    line-height:50px;
+                    font-size:15px;
+                    cursor: pointer;
+                    background-color:rgb(250, 250, 250);
+                    border-top-right-radius:50px;
+                    border-bottom-right-radius:50px;
+
+                    &:hover{font-size:20px !important;}
+
+
+                }
+
+                .Dec{
+                    font-size:15px;
+
+                    width:50px;
+                    height:50px;
+                    position: absolute;
+                    left:0;
+                    top:0;
+                    bottom:0;
+                    margin: auto;
+                    text-align: center;
+                    line-height:50px;
+                    cursor: pointer;
+                    background-color:rgb(250, 250, 250);
+                    border-top-left-radius:50px;
+                    border-bottom-left-radius:50px;
+                    &:hover{font-size:20px !important;}
+
+                }
+               .Counter{
+                width:70px;
+                height:50px;
+                position: absolute;
+                left:0;
+                right:0;
+                top:0;
+                bottom:0;
+                margin: auto;
+                text-align: center;
+                line-height:50px;
+                color:#000;
+                display: block;
+               }
+                
+
+
+            }
+        }
+    }
+}
+
+
+.BackToTop{
+
+    position:fixed;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background-color:#FFF;
+    @include box-shadow(3);
+    right:10px;
+    bottom:10px;
+    text-align: center;
+    line-height:40px;
+    font-size:22px !important;  
+
+    
+}

@@ -1,0 +1,93 @@
+@import '../../assets/style/mixin';
+
+.img{
+    width:100% !important;
+    height: inherit !important;
+    object-fit: cover;
+margin:auto;
+z-index: 100;
+animation:zoom 15s  linear infinite alternate;
+
+    
+}
+@keyframes zoom {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.2);
+
+    }
+}
+.layer{
+    width:100%;
+    height:inherit;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.644);
+    left:-1px;
+    right:0;
+    bottom:0;
+    top:0;
+    margin:auto;
+    z-index: 100000 !important;
+    
+
+    
+}
+.Parent{
+overflow: hidden;
+    margin:2px;
+    text-align: center;
+    height:20vh !important;
+    position: relative;
+    @include box-shadow(1);
+    // -webkit-text-fill-color: transparent; 
+    // -webkit-text-stroke-width: 1px;
+    // -webkit-text-stroke-color: #FFF;
+    color:#FFF;
+    font-size:35px;
+    text-transform: uppercase;
+    cursor: pointer;
+    width:100% !important;
+
+    &:hover{
+        color: rgb(217, 255, 0); 
+    
+
+    }
+
+}
+
+.SliderButton{
+    position: absolute !important;
+    height:30px;
+    outline:0;
+    border:1px solid $main-blue;
+    // @include box-shadow(1);
+    background-color: #FFF;
+    cursor: pointer;
+
+
+
+    svg{
+        font-size:30px !important;
+        color:$main-blue;
+        margin-top:-2px;
+        
+    }
+    
+
+}
+
+.na{
+    // left:-30px;
+    right:5px;
+    top:-50px;
+    margin:auto;
+}
+.pa{
+    // left:30px;
+    right:35px;
+    top:-50px;
+    margin:auto;
+}

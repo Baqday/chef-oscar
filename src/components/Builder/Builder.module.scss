@@ -1,0 +1,103 @@
+@import '../../assets/style/mixin';
+
+.Builder{
+
+    width:97vw;
+    height:50vh;
+    margin:10vh auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height:50vh;
+    text-align: center;
+    .Btn{
+        width:90%;
+        height:10vh;
+        @include box-shadow(3);
+        outline: none;
+        background-color: transparent;
+        font-size: 25px;
+        border: 0;
+        cursor: pointer;
+        position: relative;
+
+       
+        &:hover{
+        
+            background-color: #FFF;
+        
+            transition:.2s ease-in-out;
+        }
+
+    }
+
+    .Pizza{
+        width:45%;
+        height:inherit;
+        @include box-shadow(3);
+        margin-left:2vw;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-color: #FEDB23;
+
+        .PizzaImg{
+            width:60%;
+            height:inherit;
+            position: relative;
+            
+            img{
+                width: 100%;
+                position: absolute;
+                left:0;
+                right:0;
+                bottom: 0;
+                top:0;
+                margin: auto;
+            }
+        }
+        .PizzaInfo{
+            width:40%;
+            height:inherit;
+        }
+
+    
+
+    }
+
+    .Burger{
+        width:45%;
+        height:inherit;
+        @include box-shadow(3);
+        margin-right:2vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-color: #FEDB23;
+
+        .BurgerImg{
+            width:60%;
+            height:inherit;
+            position: relative;
+            
+            img{
+                width: 100%;
+                position: absolute;
+                left:0;
+                right:0;
+                bottom: 0;
+                top:0;
+                margin: auto;
+            }
+        }
+        .BurgerInfo{
+            width:40%;
+            height:inherit;
+        }
+
+    }
+    
+}

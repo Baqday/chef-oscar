@@ -1,0 +1,190 @@
+@import '../../assets/style/mixin';
+
+
+
+.Header{
+    width:100vw;
+    min-height:30vh;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom:20px;
+    margin-top:20px;
+    .LinkButton{
+        position: absolute;
+        width:200px;
+        height:40px;
+        right:-100%;
+        bottom:0;
+        top:0;
+        margin: auto;
+        text-align: center;
+        background-color: rgb(255, 187, 0);
+        transition:.1s ease;
+
+
+        .Link{
+            text-decoration: none;
+            display: block;
+            line-height:40px;
+            color: rgb(255, 255, 255);
+        }
+
+    }
+    
+    
+    .Cuisine{
+        width:30%;
+        height:200px;
+        background:$main-blue;
+        position: relative;
+        overflow: hidden;
+        @include box-shadow(3);
+        background-image: url(../../assets/img/cuisine.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+
+        &:before{
+            position: absolute;
+            content: '';
+            width:0;
+            height:200px;
+            background:rgba(0, 0, 0, 0.61);
+            transition:.1s ease;
+
+        }
+
+        &:hover::before{
+            width:100%;
+            transition:.1s ease;
+        }
+
+        &:hover .LinkButton{
+            right:0;
+            left:0;
+            transition:.1s ease;
+        }
+
+    }
+    .Restaurant{
+        overflow: hidden;
+
+        width:30%;
+        height:200px;
+        background:rgb(194, 27, 27);
+        position: relative;
+        @include box-shadow(3);
+        background-image: url(../../assets/img/restaurant.png);
+
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        &:before{
+            position: absolute;
+            content: '';
+            width:0;
+            height:200px;
+            background:rgba(0, 0, 0, 0.61);
+            transition:.1s ease;
+
+        }
+
+        &:hover::before{
+            width:100%;
+            transition:.1s ease;
+        }
+        &:hover .LinkButton{
+            right:0;
+            left:0;
+            transition:.1s ease;
+        }
+        
+    }
+
+    .Market{
+        width:30%;
+        height:200px;
+        background:rgb(255, 145, 0);
+        overflow: hidden;
+
+        position: relative;
+        @include box-shadow(3);
+        background-image: url(../../assets/img/market.svg);
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        &:before{
+            position: absolute;
+            content: '';
+            width:0;
+            height:200px;
+            background:rgba(0, 0, 0, 0.61);
+            transition:.1s ease;
+
+        }
+
+        &:hover::before{
+            width:100%;
+            transition:.1s ease;
+        }
+        &:hover .LinkButton{
+            right:0;
+            left:0;
+            transition:.1s ease;
+        }
+
+    }
+
+        
+}
+
+.MenuSlider{
+    width:100vw;
+    height:30vh;
+    position: relative;
+    overflow: hidden;
+    margin: 70px auto;
+    .Slider{
+        width:97vw;
+        height:30vh;
+        
+        position: relative;
+        margin:50px auto !important;
+        text-align: center;
+        .PausePlay{
+            position: absolute;
+            width: 5vw;
+            height: 5vh;
+            top: -48px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            line-height: 5vh;
+            color: #7513F5;
+            cursor: pointer;
+
+        }
+        .Title{
+            color:$title;
+            position: absolute;
+            top:-75px;
+        }
+        div{
+            height:25vh;
+            line-height:25vh;
+
+            margin-left:1px;
+            margin-right:1px;
+            border-radius:10px;
+            
+            
+        }
+
+       
+    }
+    
+   
+}
+

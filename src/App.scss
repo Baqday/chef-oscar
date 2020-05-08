@@ -1,0 +1,14 @@
+@import './assets/style/mixin';
+@include font-face('BarmenoBold','../../assets/fonts/Barmeno/Barmeno-ExtraBold.otf');
+@include font-face('BarmenoMedium','../../assets/fonts/Barmeno/Barmeno-Medium.otf');
+html {
+  scroll-behavior: smooth;
+  margin:0;
+  padding: 0;
+}
+.App{
+
+  font-family: BarmenoMedium;
+  
+
+}
